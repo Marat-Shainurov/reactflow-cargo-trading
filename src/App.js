@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactFlow, { Controls, Background, useNodesState, useEdgesState } from 'reactflow';
+import 'reactflow/dist/style.css';
+import nodesData from './flow_data.json';
+import { initialEdges, initialNodes } from './nodes_and_edges';
+import Regulator from './regulator-nodes';
 
-function App() {
+function App() { 
+
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div style={{ height: '85vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <ReactFlow 
+        nodes={nodes} 
+        edges={edges} 
+        onNodesChange={onNodesChange} 
+        onEdgesChange={onEdgesChange} 
+        fitView
+        attributionPosition="bottom-left"
         >
-          Learn React
-        </a>
-      </header>
+        <Background />
+        <Controls />
+      </ReactFlow>
     </div>
   );
 }
