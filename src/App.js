@@ -1,9 +1,21 @@
 import React from 'react';
 import ReactFlow, { Controls, Background, useNodesState, useEdgesState } from 'reactflow';
 import 'reactflow/dist/style.css';
-import nodesData from './flow_data.json';
 import { initialEdges, initialNodes } from './nodes_and_edges';
-import Regulator from './regulator-nodes';
+import docNodes from './doc-nodes';
+import functionalBlockNodes from './functional-block-nodes';
+import mechanismsNodes from './mechanisms-nodes';
+import inputNodes from './input-nodes';
+import outputNodes from './output-nodes';
+
+
+const nodeTypes = {
+  docNode: docNodes,
+  blockNode: functionalBlockNodes,
+  mechanismsNode: mechanismsNodes,
+  inputNode: inputNodes,
+  outputNode: outputNodes
+};
 
 function App() { 
 
@@ -19,6 +31,7 @@ function App() {
         onEdgesChange={onEdgesChange} 
         fitView
         attributionPosition="bottom-left"
+        nodeTypes={nodeTypes}
         >
         <Background />
         <Controls />
