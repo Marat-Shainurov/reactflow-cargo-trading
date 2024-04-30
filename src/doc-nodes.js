@@ -18,8 +18,9 @@ export default memo(({ data }) => {
       }}
     >
       <Handle type="target" position={Position.Bottom} style={{ background: '#555' }} />
-      <div style={{ fontSize: '11px' }}>
-        <strong>Документ</strong>
+      <div style={{ fontSize: '11px', textAlign: 'center' }}>
+        <strong style={{ display: 'block', lineHeight: '16px' }}>Документов:</strong>
+        <strong style={{ display: 'block', lineHeight: '16px' }}>{ data.docs_count }</strong>
       </div>
       <Handle type="source" position={Position.Top} style={{ background: '#555' }} />
     </div>

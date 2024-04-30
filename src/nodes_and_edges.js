@@ -1,4 +1,5 @@
 import { Position } from 'reactflow';
+import contractData from './contract_data_1.json';
 
 const walletNodeDefaults = {
   sourcePosition: Position.Right,
@@ -19,7 +20,7 @@ const walletNodeDefaults = {
 const initialNodes = [
   {
     id: "1",
-    data: {"label": "Кошелек"},
+    data: {label: contractData.wallets.declared.amount},
     position: {x: 0, y: 89},
     ...walletNodeDefaults
   },
@@ -31,7 +32,7 @@ const initialNodes = [
     },
   {
     id: "3",
-    data: {"label": "Кошелек"},
+    data: {label: contractData.wallets.quality_control_wallet.amount},
     position: {x: 350, y: 89},
     ...walletNodeDefaults
   },
@@ -43,7 +44,7 @@ const initialNodes = [
   },
   {
     id: "5",
-    data: {"label": "Кошелек"},
+    data: {label: contractData.wallets.uploading_wallet.amount},
     position: {x: 750, y: 89},
     ...walletNodeDefaults
   },
@@ -55,21 +56,20 @@ const initialNodes = [
   },
   {
     id: "7",
-    data: {"label": "Кошелек"},
+    data: {label: contractData.wallets.unloading_wallet.amount},
     position: {x: 1100, y: 89},
     ...walletNodeDefaults
   },
   {
     id: "8",
-    data: {label: "РЕГ"},
-    position: {x: 145, y: -100},
+    data: {label: "Регулятор"},
+    position: {x: 145, y: -99},
     type: 'reg',
     targetPosition: 'bottom',
     style: {
-      borderRadius: '100%',
       backgroundColor: '#D8BFD8',
-      width: 60,
-      height: 60,
+      width: 100,
+      height: 50,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -78,15 +78,14 @@ const initialNodes = [
   },
   {
     id: "9",
-    data: {label: "ЛАБ"},
+    data: {label: contractData.participants.lab.name},
     type: 'lab',
     sourcePosition: 'top',
-    position: {x: 145, y: 350},
+    position: {x: 145, y: 358},
     style: {
-      borderRadius: '100%',
       backgroundColor: '#D8BFD8',
-      width: 60,
-      height: 60,
+      width: 100,
+      height: 50,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -95,15 +94,14 @@ const initialNodes = [
   },
   {
     id: "10",
-    data: {label: "ПЩ"},
-    position: {x: 430, y: 350},
+    data: {label: contractData.participants.seller.name},
+    position: {x: 430, y: 358},
     type: 'seller',
     sourcePosition: 'top',
     style: {
-      borderRadius: '100%',
       backgroundColor: '#D8BFD8',
-      width: 60,
-      height: 60,
+      width: 100,
+      height: 50,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -112,15 +110,14 @@ const initialNodes = [
   },
   {
     id: "15",
-    data: {label: "ЛО"},
-    position: {x: 750, y: 350},
+    data: {label: contractData.participants.logistics[0].name},
+    position: {x: 750, y: 358},
     type: 'logistic',
     sourcePosition: 'top',
     style: {
-      borderRadius: '100%',
       backgroundColor: '#D8BFD8',
-      width: 60,
-      height: 60,
+      width: 100,
+      height: 50,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -129,15 +126,14 @@ const initialNodes = [
   },
   {
     id: "11",
-    data: {label: "ПО"},
-    position: {x: 1100, y: 350},
+    data: {label: contractData.participants.buyer.name},
+    position: {x: 1100, y: 358},
     type: 'buyer',
     sourcePosition: 'top',
     style: {
-      borderRadius: '100%',
       backgroundColor: '#D8BFD8',
-      width: 60,
-      height: 60,
+      width: 100,
+      height: 50,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -146,26 +142,31 @@ const initialNodes = [
   },
   {
     id: "12",
+    data: { docs_count: contractData.documents.quality_control_docs.docs_count },
     position: {x: 135, y: 195},
     type: "docNode",
   },
   {
     id: "13",
+    data: { docs_count: contractData.documents.quality_control_docs.docs_count },
     position: {x: 420, y: 195},
     type: "docNode",
   },
   {
     id: "14",
+    data: { docs_count: contractData.documents.quality_control_docs.docs_count },
     position: {x: 655, y: 195},
     type: "docNode",
   },
   {
     id: "16",
+    data: { docs_count: contractData.documents.quality_control_docs.docs_count },
     position: {x: 825, y: 195},
     type: "docNode",
   },
   {
     id: "17",
+    data: { docs_count: contractData.documents.quality_control_docs.docs_count },
     position: {x: 1000, y: 195},
     type: "docNode"
   },

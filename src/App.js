@@ -23,19 +23,21 @@ function App() {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   return (
-    <div style={{ height: '85vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <ReactFlow 
-        nodes={nodes} 
-        edges={edges} 
-        onNodesChange={onNodesChange} 
-        onEdgesChange={onEdgesChange} 
-        fitView
-        attributionPosition="bottom-left"
-        nodeTypes={nodeTypes}
-        >
-        <Background />
-        <Controls />
-      </ReactFlow>
+    <div>
+      <div style={{ height: '85vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <ReactFlow 
+          nodes={nodes} 
+          edges={edges} 
+          onNodesChange={onNodesChange} 
+          onEdgesChange={onEdgesChange} 
+          fitView
+          attributionPosition="bottom-left"
+          nodeTypes={nodeTypes}
+          >
+          <Background />
+          <Controls />
+        </ReactFlow>
+      </div>
     </div>
   );
 }
