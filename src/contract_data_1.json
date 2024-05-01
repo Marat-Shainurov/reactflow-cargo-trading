@@ -3,23 +3,27 @@
         "buyer": {
             "name": "ЭКОМИКС",
             "email": "m_shainurov@mail.ru",
-            "coordinates": "{'latitude': 53.4368674, 'longitude': 39.8468886}"
+            "lat": 53.4368674,
+            "lon": 39.8468886
         },
         "seller": {
             "name": "АГРОВИТА",
             "email": "m_shainurov@mail.ru",
-            "coordinates": "{'latitude': '51.5128258', 'longitude': '45.9552692'}"
+            "lat": 51.5128258,
+            "lon": 45.9552692
         },
         "lab": {
             "name": "ЛАБОРАТОРИЯ 1",
             "email": "m_shainurov@mail.ru",
-            "coordinates": "{'latitude': 55.75582600, 'longitude': 37.61729990}"
+            "lat": 55.755826,
+            "lon": 37.6172999
         },
         "logistics": [
             {
                 "name": "ДАРИНА-АГРОТРАНС",
                 "email": "m_shainurov@mail.ru",
-                "coordinates": "{'latitude': 59.1965941, 'longitude': 39.9032068}"
+                "lat": 59.1965941,
+                "lon": 39.9032068
             }
         ]
     },

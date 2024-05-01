@@ -1,18 +1,14 @@
 import React from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import ReactFlowPage from './ReactFlowPage';
-import MapPage from './MapPage';
 
 function AppRouter() {
   return (
-    <div>
+    <div style={{ marginLeft: '10px'}}>
       <nav>
-        <ul>
+        <ul style={{ listStyleType: 'none', padding: 0}}>
           <li>
-            <Link to="/">Flow</Link>
-          </li>
-          <li>
-            <Link to="/map">Map</Link>
+            <Link to="/map" style={{ textDecoration: 'none', padding: '10px 20px', backgroundColor: '#87CEFA', color: 'white', borderRadius: '5px', border: 'none' }}>Карта</Link>
           </li>
         </ul>
       </nav>
