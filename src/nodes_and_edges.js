@@ -21,13 +21,25 @@ const initialNodes = [
   {
     id: "1",
     data: {label: contractData.wallets.declared.amount},
-    position: {x: 0, y: 89},
+    position: {x: -340, y: 89},
+    ...walletNodeDefaults
+  },
+  {
+    id: "22",
+    type: 'blockNode',
+    data: {label: contractData.functional_blocs.volume_confirmation.name},
+    position: {x: -230, y: 100}
+  },
+  {
+    id: "23",
+    data: {label: contractData.wallets.volume_confirmed.amount},
+    position: {x: -15, y: 89},
     ...walletNodeDefaults
   },
   {
     id: "2",
     type: 'blockNode',
-    data: {label: "Проверка качества"},
+    data: {label: contractData.functional_blocs.quality_control.name},
     position: {x: 100, y: 100},
     },
   {
@@ -39,7 +51,7 @@ const initialNodes = [
   {
     id: "4",
     type: "blockNode",
-    data: {label: "Погрузка"},
+    data: {label: contractData.functional_blocs.uploading.name},
     position: {x: 500, y: 100},
   },
   {
@@ -51,7 +63,7 @@ const initialNodes = [
   {
     id: "6",
     type: "blockNode",
-    data: {label: "Разгрузка"},
+    data: {label: contractData.functional_blocs.unloading.name},
     position: {x: 900, y: 100}
   },
   {
@@ -63,7 +75,7 @@ const initialNodes = [
   {
     id: "8",
     data: {label: "Регулятор"},
-    position: {x: 145, y: -99},
+    position: {x: 130, y: -99},
     type: 'reg',
     targetPosition: 'bottom',
     style: {
@@ -81,7 +93,7 @@ const initialNodes = [
     data: {label: contractData.participants.lab.name},
     type: 'lab',
     sourcePosition: 'top',
-    position: {x: 145, y: 358},
+    position: {x: 130, y: 358},
     style: {
       backgroundColor: '#D8BFD8',
       width: 100,
@@ -95,7 +107,23 @@ const initialNodes = [
   {
     id: "10",
     data: {label: contractData.participants.seller.name},
-    position: {x: 430, y: 358},
+    position: {x: 411, y: 358},
+    type: 'seller',
+    sourcePosition: 'top',
+    style: {
+      backgroundColor: '#D8BFD8',
+      width: 100,
+      height: 50,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontWeight: 'bold'
+    }
+  },
+  {
+    id: "25",
+    data: {label: contractData.participants.seller.name},
+    position: {x: -199, y: 358},
     type: 'seller',
     sourcePosition: 'top',
     style: {
@@ -127,7 +155,7 @@ const initialNodes = [
   {
     id: "11",
     data: {label: contractData.participants.buyer.name},
-    position: {x: 1100, y: 358},
+    position: {x: 1075, y: 358},
     type: 'buyer',
     sourcePosition: 'top',
     style: {
@@ -143,55 +171,61 @@ const initialNodes = [
   {
     id: "12",
     data: { docs_count: contractData.documents.quality_control_docs.docs_count },
-    position: {x: 135, y: 195},
+    position: {x: 140, y: 195},
+    type: "docNode",
+  },
+  {
+    id: "24",
+    data: { docs_count: contractData.documents.volume_confirmation_docs.docs_count },
+    position: {x: -190, y: 195},
     type: "docNode",
   },
   {
     id: "13",
-    data: { docs_count: contractData.documents.quality_control_docs.docs_count },
+    data: { docs_count: contractData.documents.uploading_seller_docs.docs_count },
     position: {x: 420, y: 195},
     type: "docNode",
   },
   {
     id: "14",
-    data: { docs_count: contractData.documents.quality_control_docs.docs_count },
+    data: { docs_count: contractData.documents.uploading_logistics_docs.docs_count },
     position: {x: 655, y: 195},
     type: "docNode",
   },
   {
     id: "16",
-    data: { docs_count: contractData.documents.quality_control_docs.docs_count },
+    data: { docs_count: contractData.documents.unloading_logistics_docs.docs_count },
     position: {x: 825, y: 195},
     type: "docNode",
   },
   {
     id: "17",
-    data: { docs_count: contractData.documents.quality_control_docs.docs_count },
+    data: { docs_count: contractData.documents.unloading_buyer_docs.docs_count },
     position: {x: 1000, y: 195},
     type: "docNode"
   },
   {
     id: "18",
     data: {label: "Механизмы"},
-    position: {x: -25, y: -137.5},
+    position: {x: -400, y: -137.5},
     type: "mechanismsNode"
   },
   {
     id: "19",
     data: {label: "Участники"},
-    position: {x: -25, y: 410},
+    position: {x: -400, y: 410},
     type: "mechanismsNode"
   },
   {
     id: "20",
     data: {label: "Вход"},
-    position: {x: -120, y: -41.5},
+    position: {x: -460, y: -41.5},
     type: "inputNode"
   },
   {
     id: "21",
     data: {label: "Выход"},
-    position: {x: 1250, y: -41.5},
+    position: {x: 1230, y: -41.5},
     type: "outputNode"
   }
 ];
@@ -199,10 +233,36 @@ const initialNodes = [
 
 const initialEdges = [
   {
-    id: "1-2a",
+    id: "1-22",
     source: "1", 
+    target: "22", 
+    targetHandle: "a",
+    animated: true
+  },
+  {
+    id: "22-23",
+    source: "22", 
+    target: "23", 
+    animated: true
+  },
+  {
+    id: "23-2",
+    source: "23", 
     target: "2", 
     targetHandle: "a",
+    animated: true
+  },
+  {
+    id: "25-24",
+    source: "25", 
+    target: "24", 
+    animated: true
+  },
+  {
+    id: "24-22",
+    source: "24", 
+    target: "22", 
+    targetHandle: "c",
     animated: true
   },
   {

@@ -1,83 +1,82 @@
 {
-  "participants": {
-      "buyer": {
-          "name": "ЭКОМИКС",
-          "email": "m_shainurov@mail.ru",
-          "coordinates": "{'latitude': 53.4368674, 'longitude': 39.8468886}"
-      },
-      "seller": {
-          "name": "АГРОВИТА",
-          "email": "m_shainurov@mail.ru",
-          "coordinates": "{'latitude': '51.5128258', 'longitude': '45.9552692'}"
-      },
-      "lab": {
-          "name": "ЛАБОРАТОРИЯ 1",
-          "email": "m_shainurov@mail.ru",
-          "coordinates": "{'latitude': 55.75582600, 'longitude': 37.61729990}"
-      },
-      "logistics": [
-          {
-              "name": "ДАРИНА-АГРОТРАНС",
-              "email": "m_shainurov@mail.ru",
-              "coordinates": "{'latitude': 59.1965941, 'longitude': 39.9032068}"
-          }
-      ]
-  },
-  "documents": {
-      "quality_control_docs": {
-          "docs_count": 1,
-          "docs_data": [
-              {
-                  "email": "m_shainurov@mail.ru",
-                  "datetime": "22.03.2024",
-                  "is_signature_validated": true,
-                  "is_processed": true
-              }
-          ]
-      },
-      "uploading_docs": {
-          "docs_count": 1,
-          "docs_data": [
-              {
-                  "email": "m_shainurov@mail.ru",
-                  "datetime": "22.03.2024",
-                  "is_signature_validated": true,
-                  "is_processed": true
-              }
-          ]
-      },
-      "unloading_docs": {
-          "docs_count": 0,
-          "docs_data": []
-      }
-  },
-  "wallets": {
-      "declared": {
-          "name": "Задекларирован",
-          "amount": 1970.0
-      },
-      "quality_control_wallet": {
-          "name": "Проверено",
-          "amount": 0.0
-      },
-      "uploading_wallet": {
-          "name": "Загружено",
-          "amount": 30.0
-      },
-      "unloading_wallet": {
-          "name": "Разгружено",
-          "amount": 0.0
-      }
-  },
-  "functional_blocs": {
-      "quality_control": {
-          "name": "Проверка качества"
-      },
-      "uploading": {
-          "name": "Загружено"
-      },
-      "unloading": {
-          "name": "Разгружено"
-      }
-  }
+    "participants": {
+        "buyer": {
+            "name": "ЭКОМИКС",
+            "email": "m_shainurov@mail.ru",
+            "coordinates": "{'latitude': 53.4368674, 'longitude': 39.8468886}"
+        },
+        "seller": {
+            "name": "АГРОВИТА",
+            "email": "m_shainurov@mail.ru",
+            "coordinates": "{'latitude': '51.5128258', 'longitude': '45.9552692'}"
+        },
+        "lab": {
+            "name": "ЛАБОРАТОРИЯ 1",
+            "email": "m_shainurov@mail.ru",
+            "coordinates": "{'latitude': 55.75582600, 'longitude': 37.61729990}"
+        },
+        "logistics": [
+            {
+                "name": "ДАРИНА-АГРОТРАНС",
+                "email": "m_shainurov@mail.ru",
+                "coordinates": "{'latitude': 59.1965941, 'longitude': 39.9032068}"
+            }
+        ]
+    },
+    "documents": {
+        "volume_confirmation_docs": {
+            "docs_count": 3
+        },
+        "quality_control_docs": {
+            "docs_count": 2
+        },
+        "uploading_seller_docs": {
+            "docs_count": 1
+        },
+        "uploading_logistics_docs": {
+            "docs_count": 1
+        },
+        "unloading_buyer_docs": {
+            "docs_count": 1
+        },
+        "unloading_logistics_docs": {
+            "docs_count": 1
+        }
+    },
+    "wallets": {
+        "volume_confirmed": {
+            "name": "Подтверждено",
+            "amount": 50.0
+        },
+        "declared": {
+            "name": "Задекларировано",
+            "amount": 865.0
+        },
+        "quality_control_wallet": {
+            "name": "Проверено",
+            "amount": 35.0
+        },
+        "uploading_wallet": {
+            "name": "Загружено",
+            "amount": 0.0
+        },
+        "unloading_wallet": {
+            "name": "Разгружено",
+            "amount": 50.0
+        }
+    },
+    "functional_blocs": {
+        "volume_confirmation": {
+            "name": "Подтверждение объема"
+        },
+        "quality_control": {
+            "name": "Проверка качества"
+        },
+        "uploading": {
+            "name": "Загрузка"
+        },
+        "unloading": {
+            "name": "Разгрузка"
+        }
+    }
 }

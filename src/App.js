@@ -1,44 +1,19 @@
 import React from 'react';
-import ReactFlow, { Controls, Background, useNodesState, useEdgesState } from 'reactflow';
-import 'reactflow/dist/style.css';
-import { initialEdges, initialNodes } from './nodes_and_edges';
-import docNodes from './doc-nodes';
-import functionalBlockNodes from './functional-block-nodes';
-import mechanismsNodes from './mechanisms-nodes';
-import inputNodes from './input-nodes';
-import outputNodes from './output-nodes';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AppRouter from './AppRouter';
+import MapPage from './MapPage';
 
 
-const nodeTypes = {
-  docNode: docNodes,
-  blockNode: functionalBlockNodes,
-  mechanismsNode: mechanismsNodes,
-  inputNode: inputNodes,
-  outputNode: outputNodes
-};
-
-function App() { 
-
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-
+function App() {
   return (
-    <div>
-      <div style={{ height: '85vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <ReactFlow 
-          nodes={nodes} 
-          edges={edges} 
-          onNodesChange={onNodesChange} 
-          onEdgesChange={onEdgesChange} 
-          fitView
-          attributionPosition="bottom-left"
-          nodeTypes={nodeTypes}
-          >
-          <Background />
-          <Controls />
-        </ReactFlow>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<AppRouter />} />
+          <Route path="/map" element={<MapPage />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 

@@ -5,7 +5,7 @@ export default memo(({ data }) => {
   return (
     <div
       style={{
-        width: 130,
+        width: 140,
         height: 15, 
         backgroundColor: '#87CEFA',
         border: '1px solid black',
