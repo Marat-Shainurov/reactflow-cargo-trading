@@ -2,6 +2,10 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import React, { useEffect } from 'react';
 import contractData from './contract_data_1.json';
+import { customIconSeller, sellerIconStyles } from './custom-icons/custom-icon-seller';
+import { customIconLab, labIconStyles } from './custom-icons/custom-icon-lab';
+import { customIconBuyer, buyerIconStyles } from './custom-icons/custom-icon-buyer';
+import { customIconLogistics, logisticsIconStyles } from './custom-icons/custom-icon-logistics';
 
 
 function MapPage() {
@@ -11,23 +15,28 @@ function MapPage() {
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
       }).addTo(map);
+      
+      // Inject the CSS styles into the document
+      const markerIconStyleElement = document.createElement('style');
+      markerIconStyleElement.innerHTML = labIconStyles + sellerIconStyles + buyerIconStyles + logisticsIconStyles;
+      document.head.appendChild(markerIconStyleElement);
 
-      const seller = L.marker([contractData.participants.seller.lat, contractData.participants.seller.lon]).addTo(map);
-      seller.bindPopup(`<br>Поставщик</br> ${contractData.participants.seller.name} <b>.`).openPopup();      
+      const seller = L.marker([contractData.participants.seller.lat, contractData.participants.seller.lon], { icon: customIconSeller }).addTo(map);
+
+      const buyer = L.marker([contractData.participants.buyer.lat, contractData.participants.buyer.lon], { icon: customIconBuyer }).addTo(map);
       
-      const buyer = L.marker([contractData.participants.buyer.lat, contractData.participants.buyer.lon]).addTo(map);
-      buyer.bindPopup(`<br>Покупатель</br> ${contractData.participants.buyer.name} <b>.`).openPopup();
+      const logistsic = L.marker([contractData.participants.logistics[0].lat, contractData.participants.logistics[0].lon], { icon: customIconLogistics }).addTo(map);
       
-      const logistsic = L.marker([contractData.participants.logistics[0].lat, contractData.participants.logistics[0].lon]).addTo(map);
-      logistsic.bindPopup(`<br>Перевозчик</br> ${contractData.participants.logistics[0].name} <b>.`).openPopup();
-      
-      const lab = L.marker([contractData.participants.lab.lat, contractData.participants.lab.lon]).addTo(map);
-      lab.bindPopup(`<br>Лаборатория</br> ${contractData.participants.lab.name} <b>.`).openPopup();
+      const lab = L.marker([contractData.participants.lab.lat, contractData.participants.lab.lon], { icon: customIconLab }).addTo(map);
+
+      const sellerCoords = [contractData.participants.seller.lat, contractData.participants.seller.lon];
+      const buyerCoords = [contractData.participants.buyer.lat, contractData.participants.buyer.lon];
+      const polyline = L.polyline([sellerCoords, buyerCoords], { color: 'blue' }).addTo(map);
     }
   }, []);
 
   return (
-    <div id="map" style={{ height: '700px' }}>
+    <div id="map" style={{ height: '690px' }}>
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
         crossorigin=""/>
