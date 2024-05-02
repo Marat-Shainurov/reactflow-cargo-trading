@@ -5,18 +5,28 @@ import contractData from '../contract_data_1.json';
 export const customIconBuyer = L.divIcon({
   className: 'custom-buyer-icon',
   html: `
-  <div class="marker-container">
-    <div class="incomming-wallet">
-      ${contractData.wallets.uploading_wallet.amount}
+  <div class="external-container">
+    <div class="marker-container-buyer">
+      <div class="incomming-wallet-buyer">
+        ${contractData.wallets.uploading_wallet.amount}
+      </div>
+      <div class="block-buyer">
+        <div><b>${contractData.functional_blocs.unloading.name}</b></div>
+      </div>
+      <div class="outcomming-wallet-buyer">
+        ${contractData.wallets.unloading_wallet.amount}
+      </div>
     </div>
-    <div  class="block">
-      <div>${contractData.participants.buyer.type}:</div>
-      <div><b>${contractData.participants.buyer.name}</b></div>
+    <div class="marker-container-buyer">
+      <div class="participant-buyer">
+        <div>${contractData.participants.buyer.type}:</div>
+        <div><b>${contractData.participants.buyer.name}</b></div>
+      </div>
     </div>
   </div>
 `,      
-  iconSize: [350, 100], // Adjust icon size to fit the content
-  iconAnchor: [50, 25], // Adjust icon anchor
+  iconSize: [500, 100], // Adjust icon size to fit the content
+  iconAnchor: [180, 57], // Adjust icon anchor
   popupAnchor: [0, -32] // Popup anchor relative to the icon
 });
 
@@ -27,12 +37,18 @@ export const buyerIconStyles = `
   align-items: center;
 }
 
-.marker-container {
+.external-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marker-container-buyer {
   display: flex;
   align-items: center;
 }
 
-.block {
+.participant-buyer {
   width: 100px;
   height: 50px;
   background-color: #D8BFD8;
@@ -43,10 +59,24 @@ export const buyerIconStyles = `
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 10px;
+}
+
+.block-buyer {
+  width: 150px;
+  height: 40px;
+  background-color: #87CEFA;
+  border: 1px solid black;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-left: 5px;
 }
 
-.incomming-wallet {
+.incomming-wallet-buyer {
   border-radius: 50%;
   background-color: #98FB98;
   width: 40px;
@@ -56,5 +86,17 @@ export const buyerIconStyles = `
   justify-content: center;
   border: 1px solid black;
   margin-right: 5px;
+}
+
+.outcomming-wallet-buyer {
+  border-radius: 50%;
+  background-color: #98FB98;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  margin-left: 7.5px; 
 }
 `;

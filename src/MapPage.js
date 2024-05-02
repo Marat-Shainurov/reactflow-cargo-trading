@@ -11,14 +11,14 @@ import { customIconLogistics, logisticsIconStyles } from './custom-icons/custom-
 function MapPage() {
   useEffect(() => {
     if (!document.getElementById('map')._leaflet_id) {
-      const map = L.map('map').setView([55.755826, 37.6172999], 5);
+      const map = L.map('map').setView([56.756503, 60.604832], 5);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
       }).addTo(map);
       
       // Inject the CSS styles into the document
       const markerIconStyleElement = document.createElement('style');
-      markerIconStyleElement.innerHTML = labIconStyles + sellerIconStyles + buyerIconStyles + logisticsIconStyles;
+      markerIconStyleElement.innerHTML = sellerIconStyles + labIconStyles + buyerIconStyles + logisticsIconStyles;
       document.head.appendChild(markerIconStyleElement);
 
       const seller = L.marker([contractData.participants.seller.lat, contractData.participants.seller.lon], { icon: customIconSeller }).addTo(map);
@@ -31,7 +31,13 @@ function MapPage() {
 
       const sellerCoords = [contractData.participants.seller.lat, contractData.participants.seller.lon];
       const buyerCoords = [contractData.participants.buyer.lat, contractData.participants.buyer.lon];
-      const polyline = L.polyline([sellerCoords, buyerCoords], { color: 'blue' }).addTo(map);
+      const logisticsCoords = [contractData.participants.logistics[0].lat, contractData.participants.logistics[0].lon];
+      const labCoords = [contractData.participants.lab.lat, contractData.participants.lab.lon];
+
+      const polylineSellet = L.polyline([sellerCoords, labCoords], { color: 'grey', dashArray: '5, 5'  }).addTo(map);
+      const polylineLab = L.polyline([labCoords, logisticsCoords], { color: 'grey', dashArray: '5, 5'  }).addTo(map);
+      const polylineLogistsics = L.polyline([labCoords, logisticsCoords], { color: 'grey', dashArray: '5, 5'  }).addTo(map);
+      const polylineBuyer = L.polyline([logisticsCoords, buyerCoords], { color: 'grey', dashArray: '5, 5'  }).addTo(map);
     }
   }, []);
 

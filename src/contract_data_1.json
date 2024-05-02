@@ -3,30 +3,30 @@
         "buyer": {
             "name": "ЭКОМИКС",
             "email": "m_shainurov@mail.ru",
-            "lat": 57.16781,
-            "lon": 65.4650572,
+            "lat": 56.5702248,
+            "lon": 84.9840819,
             "type": "Покупатель"
         },
         "seller": {
             "name": "АГРОВИТА",
             "email": "m_shainurov@mail.ru",
-            "lat": 55.755826,
-            "lon": 37.6172999,
+            "lat": 59.1965941,
+            "lon": 39.9032068,
             "type": "Поставщик"
         },
         "lab": {
             "name": "ЛАБ 1",
             "email": "m_shainurov@mail.ru",
-            "lat": 53.4368674,
-            "lon": 39.8468886,
+            "lat": 54.3519633,
+            "lon": 48.5430384,
             "type": "Лаборатория"
         },
         "logistics": [
             {
                 "name": "АГРОТРАНС",
                 "email": "m_shainurov@mail.ru",
-                "lat": 53.5858478,
-                "lon": 52.3861951,
+                "lat": 57.1741556,
+                "lon": 65.6375537,
                 "type": "Перевозчик"
             }
         ]

@@ -5,21 +5,28 @@ import contractData from '../contract_data_1.json';
 export const customIconLogistics = L.divIcon({
   className: 'custom-logistics-icon',
   html: `
-  <div class="marker-container">
-    <div class="incomming-wallet">
-      ${contractData.wallets.quality_control_wallet.amount}
+  <div class="external-container">
+    <div class="marker-container-seller">
+      <div class="incomming-wallet-seller">
+        ${contractData.wallets.quality_control_wallet.amount}
+      </div>
+      <div class="block-seller">
+        <div><b>${contractData.functional_blocs.uploading.name}</b></div>
+      </div>
+      <div class="outcomming-wallet-seller">
+        ${contractData.wallets.uploading_wallet.amount}
+      </div>
     </div>
-    <div  class="block">
-      <div>${contractData.participants.logistics[0].type}:</div>
-      <div><b>${contractData.participants.logistics[0].name}</b></div>
-    </div>
-    <div class="outcomming-wallet">
-      ${contractData.wallets.uploading_wallet.amount}
+    <div class="marker-container-seller">
+      <div class="participant-seller">
+        <div>${contractData.participants.logistics[0].type}:</div>
+        <div><b>${contractData.participants.logistics[0].name}</b></div>
+      </div>
     </div>
   </div>
 `,      
-  iconSize: [350, 100], // Adjust icon size to fit the content
-  iconAnchor: [50, 25], // Adjust icon anchor
+  iconSize: [500, 100], // Adjust icon size to fit the content
+  iconAnchor: [180, 57], // Adjust icon anchor
   popupAnchor: [0, -32] // Popup anchor relative to the icon
 });
 
@@ -30,12 +37,18 @@ export const logisticsIconStyles = `
   align-items: center;
 }
 
-.marker-container {
+.external-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marker-container-logistics {
   display: flex;
   align-items: center;
 }
 
-.block {
+.participant-logistics {
   width: 100px;
   height: 50px;
   background-color: #D8BFD8;
@@ -46,10 +59,24 @@ export const logisticsIconStyles = `
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 10px;
+}
+
+.block-logistics {
+  width: 150px;
+  height: 40px;
+  background-color: #87CEFA;
+  border: 1px solid black;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-left: 5px;
 }
 
-.incomming-wallet {
+.incomming-wallet-logistics {
   border-radius: 50%;
   background-color: #98FB98;
   width: 40px;
@@ -61,7 +88,7 @@ export const logisticsIconStyles = `
   margin-right: 5px;
 }
 
-.outcomming-wallet {
+.outcomming-wallet-logistics {
   border-radius: 50%;
   background-color: #98FB98;
   width: 40px;
@@ -72,5 +99,4 @@ export const logisticsIconStyles = `
   border: 1px solid black;
   margin-left: 7.5px; 
 }
-`
-;
+`;
