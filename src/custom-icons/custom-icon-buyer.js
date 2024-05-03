@@ -13,9 +13,6 @@ export const customIconBuyer = L.divIcon({
       <div class="block-buyer">
         <div><b>${contractData.functional_blocs.unloading.name}</b></div>
       </div>
-      <div class="outcomming-wallet-buyer">
-        ${contractData.wallets.unloading_wallet.amount}
-      </div>
     </div>
     <div class="marker-container-buyer">
       <div class="participant-buyer">
@@ -63,8 +60,8 @@ export const buyerIconStyles = `
 }
 
 .block-buyer {
-  width: 150px;
-  height: 40px;
+  width: 100px;
+  height: 50px;
   background-color: #87CEFA;
   border: 1px solid black;
   border-radius: 10%;

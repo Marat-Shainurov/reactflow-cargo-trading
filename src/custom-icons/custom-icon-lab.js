@@ -14,9 +14,6 @@ export const customIconLab = L.divIcon({
       <div class="block-lab">
         <div><b>${contractData.functional_blocs.quality_control.name}</b></div>
       </div>
-      <div class="outcomming-wallet-lab">
-        ${contractData.wallets.quality_control_wallet.amount}
-      </div>
     </div>
     <div class="marker-container-lab">
       <div class="participant-lab">
@@ -64,8 +61,8 @@ export const labIconStyles = `
 }
 
 .block-lab {
-  width: 150px;
-  height: 40px;
+  width: 100px;
+  height: 50px;
   background-color: #87CEFA;
   border: 1px solid black;
   border-radius: 10%;
