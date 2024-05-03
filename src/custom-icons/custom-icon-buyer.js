@@ -34,6 +34,18 @@ export const buyerIconStyles = `
   align-items: center;
 }
 
+.popup-container-buyer {
+  display: flex;
+  align-items: center;
+  gap: 50px; 
+}
+
+.popup-block-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .external-container {
   display: flex;
   flex-direction: column;

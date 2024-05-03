@@ -24,7 +24,7 @@ export const customIconSeller = L.divIcon({
 `,   
   iconSize: [500, 150], // Adjust icon size to fit the content
   iconAnchor: [180, 57], // Adjust icon anchor
-  popupAnchor: [0, -32] // Popup anchor relative to the icon
+  popupAnchor: [0, 0] // Popup anchor relative to the icon
 });
 
 export const sellerIconStyles = `

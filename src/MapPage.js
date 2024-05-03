@@ -21,28 +21,92 @@ function MapPage() {
       markerIconStyleElement.innerHTML = sellerIconStyles + labIconStyles + buyerIconStyles + logisticsIconStyles;
       document.head.appendChild(markerIconStyleElement);
 
-      const seller = L.marker([contractData.participants.seller.lat, contractData.participants.seller.lon], { icon: customIconSeller }).addTo(map);
+      const seller = L.marker([contractData.participants.seller.lat, contractData.participants.seller.lon]).addTo(map);
+      const buyer = L.marker([contractData.participants.buyer.lat, contractData.participants.buyer.lon]).addTo(map);
 
-      const buyer = L.marker([contractData.participants.buyer.lat, contractData.participants.buyer.lon], { icon: customIconBuyer }).addTo(map);
-      
-      const logistsic = L.marker([contractData.participants.logistics[0].lat, contractData.participants.logistics[0].lon], { icon: customIconLogistics }).addTo(map);
-      
-      const lab = L.marker([contractData.participants.lab.lat, contractData.participants.lab.lon], { icon: customIconLab }).addTo(map);
+      buyer.bindPopup(`
+      <div class="external-container">
+        <div class="marker-container-buyer">
+          <div class="incomming-wallet-buyer">
+            ${contractData.wallets.uploading_wallet.amount}
+          </div>
+          <div class="block-buyer">
+            <div><b>${contractData.functional_blocs.unloading.name}</b></div>
+          </div>
+        </div>
+        <div class="marker-container-buyer">
+          <div class="participant-buyer">
+            <div>${contractData.participants.buyer.type}:</div>
+            <div><b>${contractData.participants.buyer.name}</b></div>
+          </div>
+        </div>
+      </div>
+    `, {autoClose:false}, {maxWidth: "auto"}).openPopup();
 
+    
+      seller.bindPopup(`
+      <div class="popup-container-buyer">
+        <div class="popup-block-container">
+          <div class="marker-container-seller">
+            <div class="incomming-wallet-seller">
+              ${contractData.wallets.declared.amount}
+            </div>
+            <div class="block-seller">
+              <div><b>${contractData.functional_blocs.volume_confirmation.name}</b></div>
+            </div>
+          </div>
+          <div class="marker-container-seller">
+            <div class="participant-seller">
+              <div>${contractData.participants.seller.type}:</div>
+              <div><b>${contractData.participants.seller.name}</b></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup-block-container">
+          <div class="marker-container-lab">
+            <div class="incomming-wallet-lab">
+              ${contractData.wallets.volume_confirmed.amount}
+            </div>
+            <div class="block-lab">
+              <div><b>${contractData.functional_blocs.quality_control.name}</b></div>
+            </div>
+          </div>
+          <div class="marker-container-lab">
+            <div class="participant-lab">
+              <div>${contractData.participants.lab.type}:</div>
+              <div><b>${contractData.participants.lab.name}</b></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup-block-container">
+          <div class="marker-container-seller">
+            <div class="incomming-wallet-seller">
+              ${contractData.wallets.quality_control_wallet.amount}
+            </div>
+            <div class="block-seller">
+              <div><b>${contractData.functional_blocs.uploading.name}</b></div>
+            </div>
+          </div>
+          <div class="marker-container-seller">
+            <div class="participant-seller">
+              <div>${contractData.participants.logistics[0].type}:</div>
+              <div><b>${contractData.participants.logistics[0].name}</b></div>
+            </div>
+          </div>
+        </div>
+    </div>
+    `, { autoClose : false, maxWidth: "auto" }).openPopup();
+      
       const sellerCoords = [contractData.participants.seller.lat, contractData.participants.seller.lon];
       const buyerCoords = [contractData.participants.buyer.lat, contractData.participants.buyer.lon];
-      const logisticsCoords = [contractData.participants.logistics[0].lat, contractData.participants.logistics[0].lon];
-      const labCoords = [contractData.participants.lab.lat, contractData.participants.lab.lon];
-
-      const polylineSellet = L.polyline([sellerCoords, labCoords], { color: 'grey', dashArray: '5, 5'  }).addTo(map);
-      const polylineLab = L.polyline([labCoords, logisticsCoords], { color: 'grey', dashArray: '5, 5'  }).addTo(map);
-      const polylineLogistsics = L.polyline([labCoords, logisticsCoords], { color: 'grey', dashArray: '5, 5'  }).addTo(map);
-      const polylineBuyer = L.polyline([logisticsCoords, buyerCoords], { color: 'grey', dashArray: '5, 5'  }).addTo(map);
+      L.polyline([sellerCoords, buyerCoords], { color: 'grey', dashArray: '5, 5'  }).addTo(map);
     }
   }, []);
 
   return (
-    <div id="map" style={{ height: '690px' }}>
+    <div id="map" style={{ height: '600px' }}>
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
         crossorigin=""/>
