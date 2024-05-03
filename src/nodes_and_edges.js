@@ -74,152 +74,93 @@ const initialNodes = [
   },
   {
     id: "8",
-    data: {label: "Регулятор"},
-    position: {x: 130, y: -99},
-    type: 'reg',
+    data: {label: "SLA"},
+    position: {x: 145, y: -99},
+    type: 'slaNode',
     targetPosition: 'bottom',
-    style: {
-      backgroundColor: '#D8BFD8',
-      width: 100,
-      height: 50,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontWeight: 'bold'
-    }
   },
   {
     id: "9",
     data: {label: contractData.participants.lab.name},
-    type: 'lab',
-    sourcePosition: 'top',
-    position: {x: 130, y: 358},
-    style: {
-      backgroundColor: '#D8BFD8',
-      width: 100,
-      height: 50,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontWeight: 'bold'
-    }
+    type: 'participantNode',
+    position: {x: 130, y: 280},
   },
   {
     id: "10",
     data: {label: contractData.participants.seller.name},
-    position: {x: 411, y: 358},
-    type: 'seller',
-    sourcePosition: 'top',
-    style: {
-      backgroundColor: '#D8BFD8',
-      width: 100,
-      height: 50,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontWeight: 'bold'
-    }
+    position: {x: 411, y: 280},
+    type: 'participantNode'
   },
   {
     id: "25",
     data: {label: contractData.participants.seller.name},
-    position: {x: -199, y: 358},
-    type: 'seller',
-    sourcePosition: 'top',
-    style: {
-      backgroundColor: '#D8BFD8',
-      width: 100,
-      height: 50,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontWeight: 'bold'
-    }
+    position: {x: -199, y: 280},
+    type: 'participantNode',
   },
   {
     id: "15",
     data: {label: contractData.participants.logistics[0].name},
-    position: {x: 750, y: 358},
-    type: 'logistic',
-    sourcePosition: 'top',
-    style: {
-      backgroundColor: '#D8BFD8',
-      width: 100,
-      height: 50,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontWeight: 'bold'
-    }
+    position: {x: 750, y: 280},
+    type: 'participantNode',
   },
   {
     id: "11",
     data: {label: contractData.participants.buyer.name},
-    position: {x: 1075, y: 358},
-    type: 'buyer',
-    sourcePosition: 'top',
-    style: {
-      backgroundColor: '#D8BFD8',
-      width: 100,
-      height: 50,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontWeight: 'bold'
-    }
+    position: {x: 1075, y: 280},
+    type: 'participantNode',
   },
   {
     id: "12",
     data: { docs_count: contractData.documents.quality_control_docs.docs_count },
-    position: {x: 140, y: 195},
+    position: {x: 160, y: 185},
     type: "docNode",
   },
   {
     id: "24",
     data: { docs_count: contractData.documents.volume_confirmation_docs.docs_count },
-    position: {x: -190, y: 195},
+    position: {x: -170, y: 185},
     type: "docNode",
   },
   {
     id: "13",
     data: { docs_count: contractData.documents.uploading_seller_docs.docs_count },
-    position: {x: 420, y: 195},
+    position: {x: 440, y: 185},
     type: "docNode",
   },
   {
     id: "14",
     data: { docs_count: contractData.documents.uploading_logistics_docs.docs_count },
-    position: {x: 655, y: 195},
+    position: {x: 675, y: 185},
     type: "docNode",
   },
   {
     id: "16",
     data: { docs_count: contractData.documents.unloading_logistics_docs.docs_count },
-    position: {x: 825, y: 195},
+    position: {x: 845, y: 185},
     type: "docNode",
   },
   {
     id: "17",
     data: { docs_count: contractData.documents.unloading_buyer_docs.docs_count },
-    position: {x: 1000, y: 195},
+    position: {x: 1020, y: 185},
     type: "docNode"
   },
   {
     id: "18",
-    data: {label: "Механизмы"},
+    data: {label: "Управление"},
     position: {x: -400, y: -137.5},
     type: "mechanismsNode"
   },
   {
     id: "19",
-    data: {label: "Участники"},
-    position: {x: -400, y: 410},
+    data: {label: "Механизмы"},
+    position: {x: -400, y: 343},
     type: "mechanismsNode"
   },
   {
     id: "20",
     data: {label: "Вход"},
-    position: {x: -460, y: -41.5},
+    position: {x: -450, y: -41.5},
     type: "inputNode"
   },
   {

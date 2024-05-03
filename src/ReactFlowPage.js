@@ -6,6 +6,8 @@ import functionalBlockNodes from './custom-nodes/functional-block-nodes';
 import mechanismsNodes from './custom-nodes/mechanisms-nodes';
 import inputNodes from './custom-nodes/input-nodes';
 import outputNodes from './custom-nodes/output-nodes';
+import slaNodes from './custom-nodes/sla-nodes';
+import participantNodes from './custom-nodes/participant-nodes';
 
 
 const nodeTypes = {
@@ -13,7 +15,9 @@ const nodeTypes = {
   blockNode: functionalBlockNodes,
   mechanismsNode: mechanismsNodes,
   inputNode: inputNodes,
-  outputNode: outputNodes
+  outputNode: outputNodes,
+  slaNode: slaNodes,
+  participantNode: participantNodes
 };
 
 function App() { 

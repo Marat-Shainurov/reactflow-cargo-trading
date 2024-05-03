@@ -34,6 +34,25 @@ export const sellerIconStyles = `
   align-items: center;
 }
 
+.popup-container-buyer {
+  display: flex;
+  align-items: center;
+}
+
+.popup-block-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dotted-line {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  border-top: 3.5px dashed grey;
+  margin: 35px; 
+}
+
 .external-container {
   display: flex;
   flex-direction: column;
@@ -46,11 +65,11 @@ export const sellerIconStyles = `
 }
 
 .participant-seller {
-  width: 100px;
-  height: 50px;
+  width: 120px;
+  height: 60px;
   background-color: #D8BFD8;
   border: 1px solid black;
-  border-radius: 10%;
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,8 +79,8 @@ export const sellerIconStyles = `
 }
 
 .block-seller {
-  width: 100px;
-  height: 50px;
+  width: 140px;
+  height: 35px;
   background-color: #87CEFA;
   border: 1px solid black;
   border-radius: 10%;

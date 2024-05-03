@@ -47,11 +47,11 @@ export const labIconStyles = `
 }
 
 .participant-lab {
-  width: 100px;
-  height: 50px;
+  width: 120px;
+  height: 60px;
   background-color: #D8BFD8;
   border: 1px solid black;
-  border-radius: 10%;
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,8 +61,8 @@ export const labIconStyles = `
 }
 
 .block-lab {
-  width: 100px;
-  height: 50px;
+  width: 140px;
+  height: 35px;
   background-color: #87CEFA;
   border: 1px solid black;
   border-radius: 10%;

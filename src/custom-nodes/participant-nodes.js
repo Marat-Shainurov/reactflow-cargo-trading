@@ -5,23 +5,23 @@ export default memo(({ data }) => {
   return (
     <div
       style={{
-        width: 20,
-        height: 20, 
-        backgroundColor: '#fff',
+        width: 80,
+        height: 40, 
+        backgroundColor: '#D8BFD8',
         border: '1px solid black',
-        borderRadius: 7,
+        borderRadius: 50,
         padding: 10,
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
+        fontWeight: 'bold'
       }}
     >
-      <Handle type="target" position={Position.Bottom} style={{ background: '#555' }} />
-      <div style={{ fontSize: '11px', textAlign: 'center' }}>
-        <strong style={{ display: 'block', lineHeight: '16px' }}>{ data.docs_count }</strong>
-      </div>
       <Handle type="source" position={Position.Top} style={{ background: '#555' }} />
+      <div style={{ fontSize: '11px' }}>
+        <strong>{ data.label }</strong>
+      </div>
     </div>
   );
 });

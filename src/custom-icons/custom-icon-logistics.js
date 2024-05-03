@@ -6,16 +6,16 @@ export const customIconLogistics = L.divIcon({
   className: 'custom-logistics-icon',
   html: `
   <div class="external-container">
-    <div class="marker-container-seller">
-      <div class="incomming-wallet-seller">
+    <div class="marker-container-logistics">
+      <div class="incomming-wallet-logistics">
         ${contractData.wallets.quality_control_wallet.amount}
       </div>
-      <div class="block-seller">
+      <div class="block-logistics">
         <div><b>${contractData.functional_blocs.uploading.name}</b></div>
       </div>
     </div>
-    <div class="marker-container-seller">
-      <div class="participant-seller">
+    <div class="marker-container-logistics">
+      <div class="participant-logistics">
         <div>${contractData.participants.logistics[0].type}:</div>
         <div><b>${contractData.participants.logistics[0].name}</b></div>
       </div>
@@ -46,11 +46,11 @@ export const logisticsIconStyles = `
 }
 
 .participant-logistics {
-  width: 100px;
-  height: 50px;
+  width: 120px;
+  height: 60px;
   background-color: #D8BFD8;
   border: 1px solid black;
-  border-radius: 10%;
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,8 +60,8 @@ export const logisticsIconStyles = `
 }
 
 .block-logistics {
-  width: 100px;
-  height: 50px;
+  width: 140px;
+  height: 35px;
   background-color: #87CEFA;
   border: 1px solid black;
   border-radius: 10%;

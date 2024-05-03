@@ -34,18 +34,6 @@ export const buyerIconStyles = `
   align-items: center;
 }
 
-.popup-container-buyer {
-  display: flex;
-  align-items: center;
-  gap: 50px; 
-}
-
-.popup-block-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .external-container {
   display: flex;
   flex-direction: column;
@@ -58,11 +46,11 @@ export const buyerIconStyles = `
 }
 
 .participant-buyer {
-  width: 100px;
-  height: 50px;
+  width: 120px;
+  height: 60px;
   background-color: #D8BFD8;
   border: 1px solid black;
-  border-radius: 10%;
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,8 +60,8 @@ export const buyerIconStyles = `
 }
 
 .block-buyer {
-  width: 100px;
-  height: 50px;
+  width: 140px;
+  height: 35px;
   background-color: #87CEFA;
   border: 1px solid black;
   border-radius: 10%;
