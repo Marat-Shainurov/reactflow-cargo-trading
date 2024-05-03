@@ -1,11 +1,11 @@
 import ReactFlow, { Controls, Background, useNodesState, useEdgesState } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { initialEdges, initialNodes } from './nodes_and_edges';
-import docNodes from './doc-nodes';
-import functionalBlockNodes from './functional-block-nodes';
-import mechanismsNodes from './mechanisms-nodes';
-import inputNodes from './input-nodes';
-import outputNodes from './output-nodes';
+import docNodes from './custom-nodes/doc-nodes';
+import functionalBlockNodes from './custom-nodes/functional-block-nodes';
+import mechanismsNodes from './custom-nodes/mechanisms-nodes';
+import inputNodes from './custom-nodes/input-nodes';
+import outputNodes from './custom-nodes/output-nodes';
 
 
 const nodeTypes = {
